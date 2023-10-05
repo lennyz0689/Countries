@@ -1,18 +1,10 @@
 const { Router } = require("express")
+const { showCountries, detailCountrie } = require("../handlers/countries")
 
 const countries = Router()
 
-countries.get('/', (req, res) => {
-    res.status(200).send('NIY: mostrar todos los countries')
-})
+countries.get('/', showCountries)
 
-countries.get('/:idPais', (req, res) => {
-    res.status(200).send('NIY: mostrar detalle del countrie con el id')
-}
-)
-
-// countries.get('/name?=""',(req,res)=>{
-//     res.status(200).send('NIY: ')
-// })
+countries.get('/:idPais', detailCountrie)
 
 module.exports = { countries }
