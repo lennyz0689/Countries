@@ -24,8 +24,6 @@ module.exports = (sequelize) => {
     },
     capital: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
     },
     poblacion: {
       type: DataTypes.STRING

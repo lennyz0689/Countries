@@ -22,10 +22,6 @@ module.exports = (sequelize) => {
                 max: 5
             }
         },
-        duracion: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
         temporada: {
             type: DataTypes.STRING,
             allowNull: false

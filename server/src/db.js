@@ -13,10 +13,11 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
 modelCountrie(sequelize)
 modelActivities(sequelize)
 
-const { Country } = sequelize.models;
+const { Country, Activity } = sequelize.models;
 
 // Aca vendrian las relaciones
-// Product.hasMany(Reviews);
+Country.belongsToMany(Activity,{through: 'countryActivity', timestamps: false})
+Activity.belongsToMany(Country,{through: 'countryActivity', timestamps: false})
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
