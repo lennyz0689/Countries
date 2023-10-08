@@ -1,4 +1,4 @@
-const { countriesShowController, countrieById } = require("../controllers/countries")
+const { countriesShowController, countrieById, countriesShowControllerName } = require("../controllers/countries")
 
 const showCountries = async (req, res) => {
     const { name } = req.query
@@ -7,7 +7,8 @@ const showCountries = async (req, res) => {
             const result = await countriesShowController()
             res.status(200).json(result)
         } else {
-            res.status(200).send(`NIY: countrie con el nombre ${name}`)
+            const result = await countriesShowControllerName(name)
+            res.status(200).json(result)
         }
     } catch (error) {
         res.status(400).json({ error: error.message })
@@ -16,13 +17,13 @@ const showCountries = async (req, res) => {
 }
 
 
-const detailCountrie = async(req, res) => {
+const detailCountrie = async (req, res) => {
     const { idPais } = req.params
     try {
-        const result =  await countrieById(idPais)
+        const result = await countrieById(idPais)
         res.status(200).json(result)
     } catch (error) {
-        res.status(400).json({error: error.message})
+        res.status(400).json({ error: error.message })
     }
 }
 
