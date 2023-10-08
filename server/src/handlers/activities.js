@@ -1,4 +1,4 @@
-const { createActivitiesController } = require('../controllers/activities')
+const { createActivitiesController, showActivitiesController } = require('../controllers/activities')
 
 const createActivities = async (req, res) => {
     try {
@@ -10,8 +10,13 @@ const createActivities = async (req, res) => {
     }
 }
 
-const showActivities = (req, res) => {
-    res.status(201).send('NIY: muestra las actividades turisticas')
+const showActivities = async (req, res) => {
+    try {
+        const result = await showActivitiesController()
+        res.status(200).json(result)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
 }
 
 module.exports = {

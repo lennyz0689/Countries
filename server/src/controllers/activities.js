@@ -6,6 +6,11 @@ const createActivitiesController = async (nombre, dificultad, duracion, temporad
     return newActivity
 }
 
+const showActivitiesController = async () => {
+    return await Activity.findAll()
+}
+
 module.exports = {
-    createActivitiesController
+    createActivitiesController,
+    showActivitiesController
 }
