@@ -1,0 +1,13 @@
+.input {
+    padding: 10px 20px;
+    /* Ajusta el espaciado según tus preferencias */
+    border: 1px solid #ccc;
+    /* Bordes */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    font-size: 12px;
+    /* Tamaño de fuente */
+    width: 200px;
+    /* Ancho del campo de búsqueda */
+    margin-left: 45px;
+}
