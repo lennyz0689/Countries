@@ -1,0 +1,18 @@
+/* Card.module.css */
+.card {
+    background-color: #f5f5f5;
+    width: 330px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius:15px ;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7);
+}
+
+.bandera{
+    width: 300px;
+    height: 200px;
+}
